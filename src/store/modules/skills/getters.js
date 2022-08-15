@@ -1,1 +1,5 @@
-export default {}
+export default{
+    getSkills(state) {
+        return state.skills;
+    },
+}

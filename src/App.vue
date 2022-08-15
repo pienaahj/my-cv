@@ -1,23 +1,25 @@
 <template>
-  <router-view>
-
-  </router-view>
+  <the-header></the-header>
+  <the-layout></the-layout>
+  
 </template>
 
-<!-- <script>
-import BaseGreeting from './components/BaseGreeting.vue'
 
-export default {
-  name: 'App',
-  components: {
-    BaseGreeting,
+<script>
+  import TheHeader from './components/layout/TheHeader.vue';
+  import TheLayout from './components/layout/TheLayout.vue';
+
+  export default {
+    components: {
+      TheHeader,
+      TheLayout,
+    }
   }
-}
-</script> -->
-
+</script>
 <style>
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Roboto, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

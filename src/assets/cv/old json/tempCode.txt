@@ -1,0 +1,16 @@
+  const allSkills = [
+            "Data compilation and manipulation for management reports ", 
+            "Detailed project cost estimation ", 
+            "Budget compilation  ", 
+            "Management and cleaning of very large  ",
+            "record sets ",
+            "Contractor management ",
+            "Function out sourcing ",
+            "Wireless Local Loop planning  ",
+            "Copper line planning ",
+            "Fiber planning ",
+            "Creative GIS system use ",
+            "Right-of-way management ",
+            "Site management ",
+            "Safety management "
+  ];
