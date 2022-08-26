@@ -7,16 +7,15 @@ import courseModule from './modules/courses/index';
 
 const store = createStore({
     modules: {
-        competincies: competenciesModule,
+        competencies: competenciesModule,
         skills: skillsModule,
         courses: courseModule,
     },
-    namespaced: true,
-    state() {
-        return {
+    // state() {
+    //     return {
 
-        };
-    }
+    //     };
+    // },
 });
 
 export default store;

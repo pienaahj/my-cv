@@ -1,5 +1,5 @@
 <template>
-    <MDBCard>
+    <MDBCard >
           <a v-mdb-ripple="{ color: 'dark' }">
             <MDBCardImg 
               :src="require('../assets/images/hendrik-grey-background.webp')" 

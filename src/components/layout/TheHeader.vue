@@ -1,6 +1,6 @@
 <template>
     <header>
-       <MDBNavbar expand="lg" light bg="light" position="top" container>
+       <MDBNavbar class="mb-1 opacity-75" expand="lg" dark bg="dark" position="top" container>
             <MDBNavbarBrand href="#">
                 <img
                     src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.webp"
@@ -106,3 +106,18 @@
 
   
 </script>
+
+<style lang="scss" scoped>
+  @import '@/assets/config/_variables.scss';
+
+    .nav-layout { 
+        background-color: $bd-blue;
+        // background-color: $dark-sky-blue;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+        padding: 1rem;
+        margin: 0.5rem auto;
+        max-width: 100rem;
+    }
+
+</style>

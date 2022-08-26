@@ -1,0 +1,107 @@
+/* SCSS HEX */
+$desert-sand: #eabda0ff;
+$roman-silver: #7e8596ff;
+$olive-drab-7: #393916ff;
+$lemon-curry: #bf9810ff;
+$silver-pink: #cfafa0ff;
+$background-color: whitesmoke;
+
+/* SCSS Gradient */
+$gradient-top: linear-gradient(0deg, #eabda0ff, #7e8596ff, #393916ff, #bf9810ff, #cfafa0ff);
+$gradient-right: linear-gradient(90deg, #eabda0ff, #7e8596ff, #393916ff, #bf9810ff, #cfafa0ff);
+$gradient-bottom: linear-gradient(180deg, #eabda0ff, #7e8596ff, #393916ff, #bf9810ff, #cfafa0ff);
+$gradient-left: linear-gradient(270deg, #eabda0ff, #7e8596ff, #393916ff, #bf9810ff, #cfafa0ff);
+$gradient-top-right: linear-gradient(45deg, #eabda0ff, #7e8596ff, #393916ff, #bf9810ff, #cfafa0ff);
+$gradient-bottom-right: linear-gradient(135deg, #eabda0ff, #7e8596ff, #393916ff, #bf9810ff, #cfafa0ff);
+$gradient-top-left: linear-gradient(225deg, #eabda0ff, #7e8596ff, #393916ff, #bf9810ff, #cfafa0ff);
+$gradient-bottom-left: linear-gradient(315deg, #eabda0ff, #7e8596ff, #393916ff, #bf9810ff, #cfafa0ff);
+$gradient-radial: radial-gradient(#eabda0ff, #7e8596ff, #393916ff, #bf9810ff, #cfafa0ff);
+
+
+/* SCSS HEX */
+$slate-gray: #667993ff;
+$dark-sky-blue: #8fb2ccff;
+$smoky-black: #0a0a04ff;
+$little-boy-blue: #5fa0deff;
+$pine-tree: #2e2e21ff;
+
+/* SCSS Gradient */
+$gradient-top: linear-gradient(0deg, #667993ff, #8fb2ccff, #0a0a04ff, #5fa0deff, #2e2e21ff);
+$gradient-right: linear-gradient(90deg, #667993ff, #8fb2ccff, #0a0a04ff, #5fa0deff, #2e2e21ff);
+$gradient-bottom: linear-gradient(180deg, #667993ff, #8fb2ccff, #0a0a04ff, #5fa0deff, #2e2e21ff);
+$gradient-left: linear-gradient(270deg, #667993ff, #8fb2ccff, #0a0a04ff, #5fa0deff, #2e2e21ff);
+$gradient-top-right: linear-gradient(45deg, #667993ff, #8fb2ccff, #0a0a04ff, #5fa0deff, #2e2e21ff);
+$gradient-bottom-right: linear-gradient(135deg, #667993ff, #8fb2ccff, #0a0a04ff, #5fa0deff, #2e2e21ff);
+$gradient-top-left: linear-gradient(225deg, #667993ff, #8fb2ccff, #0a0a04ff, #5fa0deff, #2e2e21ff);
+$gradient-bottom-left: linear-gradient(315deg, #667993ff, #8fb2ccff, #0a0a04ff, #5fa0deff, #2e2e21ff);
+$gradient-radial: radial-gradient(#667993ff, #8fb2ccff, #0a0a04ff, #5fa0deff, #2e2e21ff);
+
+/* SCSS HEX */
+$charcoal: #434f5bff;
+$charleston-green: #20292bff;
+$rifle-green: #3e4637ff;
+$true-blue: #3f6bb6ff;
+$bd-blue: #4a88ca;
+
+/* SCSS Gradient */
+$gradient-top: linear-gradient(0deg, #252d1fff, #434f5bff, #20292bff, #3e4637ff, #3f6bb6ff);
+$gradient-right: linear-gradient(90deg, #252d1fff, #434f5bff, #20292bff, #3e4637ff, #3f6bb6ff);
+$gradient-bottom: linear-gradient(180deg, #252d1fff, #434f5bff, #20292bff, #3e4637ff, #3f6bb6ff);
+$gradient-left: linear-gradient(270deg, #252d1fff, #434f5bff, #20292bff, #3e4637ff, #3f6bb6ff);
+$gradient-top-right: linear-gradient(45deg, #252d1fff, #434f5bff, #20292bff, #3e4637ff, #3f6bb6ff);
+$gradient-bottom-right: linear-gradient(135deg, #252d1fff, #434f5bff, #20292bff, #3e4637ff, #3f6bb6ff);
+$gradient-top-left: linear-gradient(225deg, #252d1fff, #434f5bff, #20292bff, #3e4637ff, #3f6bb6ff);
+$gradient-bottom-left: linear-gradient(315deg, #252d1fff, #434f5bff, #20292bff, #3e4637ff, #3f6bb6ff);
+$gradient-radial: radial-gradient(#252d1fff, #434f5bff, #20292bff, #3e4637ff, #3f6bb6ff);
+
+// Variables to override
+$primary:   $silver-pink;
+$secondary: $desert-sand;
+$success:   $roman-silver;
+$danger:    $silver-pink;
+$warning:   $background-color;
+$info:      $olive-drab-7;
+$dark:      $bd-blue;
+
+
+$custom-colors:(
+    'desert-sand' :$desert-sand,
+    'roman-silver':$roman-silver,
+    'olive-drab-7':$olive-drab-7,
+    'lemon-curry' :$lemon-curry,
+    'silver-pink' :$silver-pink,
+
+    'slate-gray'     :$slate-gray,
+    'dark-sky-blue'  :$dark-sky-blue,
+    'smoky-black'    :$smoky-black,
+    'little-boy-blue':$little-boy-blue,
+    'pine-tree'      :$pine-tree,
+    'true-blue'      :$true-blue,
+    'bg-blue'        :$bd-blue,
+);
+    
+$theme-colors:(
+        'desert-sand' :$desert-sand,
+        'roman-silver':$roman-silver,
+        'olive-drab-7':$olive-drab-7,
+        'lemon-curry' :$lemon-curry,
+        'silver-pink' :$silver-pink,
+        
+        'slate-gray'     :$slate-gray,
+        'dark-sky-blue'  :$dark-sky-blue,
+        'smoky-black'    :$smoky-black,
+        'little-boy-blue':$little-boy-blue,
+        'pine-tree'      :$pine-tree,
+        'true-blue'      :$true-blue,
+        'bg-blue'        :$bd-blue,
+
+        'primary'       :$primary,
+        'secondary'     :$secondary,
+        'danger'        :$danger,
+        'success'       :$success,
+        'warning'       :$warning,
+        'info'          :$info,
+        'dark'          :$dark,
+);
+        
+$custom-colors:map-merge($theme-colors, $custom-colors);

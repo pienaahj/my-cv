@@ -1,9 +1,10 @@
+import { createRouter, createWebHistory } from 'vue-router';
+
 import NotFound from './pages/NotFound.vue';
 import HomePage from './pages/HomePage.vue';
 import AboutMe from './pages/AboutMe.vue';
 import DefaultPage from './pages/DefaultPage.vue';
 
-import { createRouter, createWebHistory } from 'vue-router';
 
 const router = createRouter({
     history: createWebHistory(), // use the built in browser history

@@ -4,30 +4,26 @@
         <base-spinner></base-spinner>
     </p>
   <ul class="card-content" v-else-if="!isLoading && hasSkills">
-    <p>Items in skills list status: {{ displaySkills  }}</p>
-    <skills-item
-        v-for="skill in loadSkills"
-        :key="skill.id"
-        :skillEntry="skill.skill"
-    >
-    </skills-item>
-    
+    <table-item
+        v-for="skillItem in loadSkills"
+        :key="skillItem.id"
+        :itemEntry="skillItem.skill"
+        >
+    </table-item>
  </ul>
 
- <button type="button" class="btn btn-light" data-mdb-ripple-color="dark" @click="Register">Register Skills</button>
 </template>>
 
 <script>
-    import SkillsItem from '../SkillsItem.vue';
+    import TableItem from "./TableItem.vue";
     export default {
         components: {
-            SkillsItem,
+            TableItem,
         },
         data() {
             return {
                 error: null,
                 isLoading: false,
-                displaySkills: "Initial...",
             }
         },
         
@@ -37,25 +33,12 @@
             async loadAllSkills() {
                 this.isLoading = true;
                 try {
-                await this.$store.dispatch['skills/loadSkills'];
+                await this.$store.dispatch('skills/loadSkills');
                 } catch (error) {
                     this.error = error.message || 'something went wrong!';
                 }
-                this.displaySkills = "loading skills from Firebase...";
-                this.isLoading = false;   
-            },
-            async Register() {
-                this.isLoading = true;
-                this.displaySkills = "Registering skills in Firebase...";
-                try {
-                    await this.$store.dispatch['skills/firebaseLoad'];
-                } catch (error) {
-                    this.error = error.message || 'something went wrong!';
-                }
-                this.displaySkills = "Done - Registering skills in Firebase...";
                 this.isLoading = false; 
-            }
-
+            },
         },
 
         // Load the skill at creation 
@@ -69,19 +52,23 @@
                 return this.$store.getters['skills/getSkills'];             
             },
             hasSkills() {
-                return !this.isLoading && this.$store.getters['skills/getSkills'];
+                return !this.isLoading && this.$store.getters['skills/hasSkills'];
             },   
         },
         
     } 
 </script>
 
-<style scoped>
-   .card-content {
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  padding: 1rem;
-  margin: 1rem auto;
-  max-width: 40rem;
-}
+<style lang="scss" scoped>
+  @import '@/assets/config/_variables.scss';
+
+    .card-content{
+        background-color: $silver-pink;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+        padding: 1rem;
+        margin: 0.5rem auto;
+        max-width: 32rem;
+    }
+
 </style>

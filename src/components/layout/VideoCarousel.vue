@@ -4,7 +4,7 @@
     :items="items6"
     :indicators="false"
     fade
-    interval=8000
+    :interval="8000"
   />
   
 

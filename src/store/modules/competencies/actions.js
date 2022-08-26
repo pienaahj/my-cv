@@ -1,8 +1,5 @@
 export default {
-    async loadCompetencies (context, data) {
-        if (!data.forceRefresh && !context.getters.shouldUpdate) {
-            return;
-        }
+    async loadCompetencies (context) {
         const response = await fetch('https://my-cv-7674b-default-rtdb.firebaseio.com/coreComp.json');
         const responseData = await response.json();
 
@@ -18,11 +15,12 @@ export default {
         for (const key in responseData) {
             const competency = {
                 id: key,
-                item: responseData[key].item
+                coreComp: responseData[key].coreComp,
             };
             competencies.push(competency);
         }
 
-        context.commit('setCompetencies', competencies);
-    }
+        context.commit('loadCompetencies', competencies);
+
+    },
 };

@@ -1,5 +1,5 @@
 export default {
-    setCompetencies(state, payload) {
+    loadCompetencies(state, payload) {
         state.competencies = payload;
-    }
+    },
 }

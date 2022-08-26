@@ -2,15 +2,15 @@
   <MDBCarousel
     v-model="carousel5"
     :items="items5"
-    interval=8000
+    :interval="8000"
     fade
     innerClass="rounded-5 shadow-4-strong"
   />
 </template>
 
 <script>
-  import { MDBCarousel } from "mdb-vue-ui-kit";   
   import { ref } from "vue";
+  import { MDBCarousel } from "mdb-vue-ui-kit";   
   export default {
     components: {
       MDBCarousel
@@ -60,42 +60,6 @@
       };
     }
   }
-  // $('.carousel').carousel({ interval: 5000 })
 </script>
 
-<style scoped>
-  /* Carousel styling */
-  #myCarousel,
-  .carousel-inner,
-  .carousel-item,
-  /* .carousel-item.active {
-    height: 100vh;
-  } */
 
-  .carousel-item:nth-child(1) {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-  }
-
-  .carousel-item:nth-child(2) {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-  }
-
-  .carousel-item:nth-child(3) {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-  }
-
-  /* Height for devices larger than 576px */
-  @media (min-width: 992px) {
-    #myCarousel {
-      margin-top: -58.59px;
-    }
-  }
-
-
-</style>
