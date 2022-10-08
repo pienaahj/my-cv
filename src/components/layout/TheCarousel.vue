@@ -4,7 +4,8 @@
     :items="items5"
     :interval="8000"
     fade
-    innerClass="rounded-5 shadow-4-strong"
+    innerClass="rounded-5 shadow-4-strong carousel-media"
+    itemsClass="d-block m-8 p-16 w-100 "
   />
 </template>
 
@@ -61,5 +62,29 @@
     }
   }
 </script>
+
+<style lang=scss >
+    .carousel {
+    height: auto; /*50vh*/
+    width: 92vh; /* width: 100%; */
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+    margin:auto; /* //need to fix */
+
+}
+
+@media only screen and (min-width: 375px) and (max-width: 1024px) {
+    .carousel-media {
+      display: flex;
+      flex-direction:column;
+      width: 60% !important;
+      max-width: 60%;
+      /* flex-wrap: wrap; */
+      column-fill: auto;
+    }
+    
+  }
+</style>
 
 

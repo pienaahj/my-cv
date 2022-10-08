@@ -1,5 +1,5 @@
 export default {
-    async loadCompetencies(context) {
+    async loadCourses(context) {
         const response = await fetch('https://my-cv-7674b-default-rtdb.firebaseio.com/courses.json');
         const responseData = await response.json();
 
@@ -15,11 +15,16 @@ export default {
         for (const key in responseData) {
             const course = {
                 id: key,
-                item: responseData[key].item
+                completed: responseData[key].completed,
+                courseCategory: responseData[key].courseCategory,
+                courseTitle: responseData[key].courseTitle,
+                datePeriod: responseData[key].datePeriod,
+                description: responseData[key].description,
+                institution: responseData[key].institution,
             };
             courses.push(course);
 
-            context.commit('setCouses', courses);
+            context.commit('setCourses', courses);
         }   
     }
 }

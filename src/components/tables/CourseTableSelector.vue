@@ -4,36 +4,35 @@
     <MDBTabNav pills justify style="background-color: whitesmoke" tabsClasses="mb-3 text-center opacity-100 bg-gradient rounded-6 ">
       
       <MDBTabItem :wrap="false" tabId="ex4-1" href="ex4-1"  class="selector_style fw-bold border shadow-6-strong rounded-6">
-      <!-- <i class="fas fa-chart-pie fa-fw me-2"></i> -->
-        <img src='@/assets/icons/career_summary_512.png' alt="..." class="img-thumbnail scale-icon-s mb-4"/>
+        <img src='@/assets/icons/training_small.png' alt="..." class="img-thumbnail scale-icon-s mb-3"/>
         <!-- <i class="far fa-address-card"></i> -->
-        <section>Career</section>
-        <section>Summay</section>
+        <section>Qualifications</section>
+        <section>School & tertiary</section>
       </MDBTabItem>
         
       <MDBTabItem :wrap="false" tabId="ex4-2" href="ex4-2" class="fw-bold border shadow-6-strong rounded-6">
-        <img src='@/assets/icons/skills_512.png' alt="..." class="img-thumbnail scale-icon-xs icon-margin-bottom"/>
-        <section>Skills & </section>
-        <section>Knowledge</section> 
+        <img src='@/assets/icons/Computer_skills_512.png' alt="..." class="img-thumbnail scale-icon-xs mb-3"/>
+        <section>Computer</section>
+        <section>Literacy</section> 
       </MDBTabItem>
 
       <MDBTabItem :wrap="false" tabId="ex4-3" href="ex4-3" class="fw-bold border shadow-6-strong rounded-6">
-        <img src='@/assets/icons/technical.png' alt="..." class="img-thumbnail scale-icon-s mb-1"/>
-        <section>Technical</section>
-        <section>Knowledge</section> 
+        <img src='@/assets/icons/classroom_512.png' alt="..." class="img-thumbnail scale-icon-xs mb-3"/>
+        <section>Formal</section>
+        <section>Training</section> 
       </MDBTabItem>
 
       <MDBTabItem :wrap="false" tabId="ex4-4" href="ex4-4" class="fw-bold border shadow-6-strong rounded-6">
-        <img src='@/assets/icons/competency.png' alt="..." class="img-thumbnail scale-icon-s mb-1"/>
-        <section>Core</section>
-        <section>Competencies</section>
+        <img src='@/assets/icons/e_learning2_512.png' alt="..." class="img-thumbnail scale-icon-s mb-2"/>
+        <section>Web based</section>
+        <section>Courses</section>
       </MDBTabItem>
 
-      <MDBTabItem :wrap="false" tabId="ex4-5" href="ex4-5" class="fw-bold border shadow-6-strong rounded-6">
-        <img src='@/assets/icons/responsibility_512.png' alt="..." class="img-thumbnail scale-icon-s mb-2"/>
+      <!-- <MDBTabItem :wrap="false" tabId="ex4-5" href="ex4-5" class="fw-bold border shadow-6-strong rounded-6">
+        <img src='@/assets/icons/technical-icon.svg' alt="..." class="img-thumbnail scale-icon-l"/>
         <section>Key</section>
         <section>Responsibilities</section> 
-      </MDBTabItem>
+      </MDBTabItem> -->
 
     </MDBTabNav>
     <!-- Tabs navs -->
@@ -45,7 +44,7 @@
       >
         <div class="d-flex">
           <div class="p-3 fw-40 justify-content-end card-content-career-summary align-items-end">
-            <career-summary></career-summary>
+            <qualifications-summary></qualifications-summary>
           </div>
           <div class="p-2 flex-grow-1"></div>
         </div>
@@ -54,41 +53,30 @@
       <MDBTabPane 
         tabId="ex4-2"
         >
-          <skills-knowledge></skills-knowledge>
+          <computer-literacy></computer-literacy>
       </MDBTabPane>
 
       <MDBTabPane
        tabId="ex4-3"
       >
         <div class="d-flex">
-          <div class="p-2 flex-grow-1"></div>
-          <div class="p-3 fw-40 w-70 justify-content-end card-content-technical align-items-end">
-            <technical-knowledge></technical-knowledge>
+          <!-- <div class="p-2 flex-grow-1"></div> -->
+          <div class="p-3 fw-40 w-100 justify-content-end card-content-technical align-items-end">
+            <all-training :online="false"></all-training>
           </div>
           <!-- <div class="p-2 flex-grow-1"></div> -->
         </div>
       </MDBTabPane>
-
+      
       <MDBTabPane 
-        tabId="ex4-4"
-        >
-          <div class="d-flex">
-            <div class="p-2 flex-grow-1"></div>
-            <div class="p-2 fw-40 justify-content-end align-items-end">
-              <core-competencies></core-competencies>
-            </div>
-          </div>
-      </MDBTabPane>
-
-      <MDBTabPane
-       tabId="ex4-5"
+      tabId="ex4-4"
       >
-        <div class="d-flex">
-          <div class="p-2 flex-grow-1"></div>
-          <div class="p-3 fw-40 justify-content-end  align-items-end">
-            <key-responsibilities></key-responsibilities>
-          </div>
+      <div class="d-flex">
+        <!-- <div class="p-2 flex-grow-1"></div> -->
+        <div class="p-3 fw-40 w-100 justify-content-end card-content-technical align-items-end">
+          <all-training :online="true"></all-training>
         </div>
+      </div>
       </MDBTabPane>
 
     </MDBTabContent>
@@ -108,11 +96,10 @@
   } from 'mdb-vue-ui-kit';
   import { ref } from 'vue';
 
-  import CoreCompetencies from '../tables/CoreCompetencies.vue';
-  import SkillsKnowledge from '../tables/SkillsKnowledge.vue';
-  import TechnicalKnowledge from '../tables/TechnicalKnowledge.vue';
-  import CareerSummary from '../tables/CareerSummary.vue';
-  import KeyResponsibilities from '../tables/KeyResponsibilities.vue';
+  import AllTraining from './AllTraining.vue';
+
+  import QualificationsSummary from '../tables/QualificationsSummary.vue';
+  import ComputerLiteracy from '../tables/ComputerLiteracy.vue';
   
   export default {
     components: {
@@ -121,13 +108,15 @@
       MDBTabContent,
       MDBTabItem,
       MDBTabPane,
-
-
-      CoreCompetencies,
-      SkillsKnowledge,
-      TechnicalKnowledge,
-      CareerSummary,
-      KeyResponsibilities,
+      AllTraining,
+      QualificationsSummary,
+      ComputerLiteracy,
+    },
+    emits: {
+        online: {
+          type: 'boolean',
+          default: false,
+        }
     },
     setup() {
       const activeTabId4 = ref('ex4-1');
@@ -151,13 +140,10 @@
   width: 20%;
 }
 .scale-icon-s {
-  width: 80%;
+  width: 60%;
 }
 .scale-icon-xs {
-  width: 100%;
-}
-.icon-margin-bottom {
-  margin-bottom: 23.5%;
+  width: 80%;
 }
 .no-background {
   background-color: aliceblue;
@@ -168,7 +154,7 @@
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
         padding: 1rem;
         margin: 0.5rem auto;
-        max-width: 35rem;
+        max-width: 100rem;
     }
   .card-content-career-summary{
       background-color: $silver-pink;

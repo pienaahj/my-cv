@@ -4,7 +4,10 @@ $roman-silver: #7e8596ff;
 $olive-drab-7: #393916ff;
 $lemon-curry: #bf9810ff;
 $silver-pink: #cfafa0ff;
+$lighter-pink: rgb(207, 195, 189);
 $background-color: whitesmoke;
+$lightTable: aliceblue;
+
 
 /* SCSS Gradient */
 $gradient-top: linear-gradient(0deg, #eabda0ff, #7e8596ff, #393916ff, #bf9810ff, #cfafa0ff);
@@ -57,11 +60,12 @@ $gradient-radial: radial-gradient(#252d1fff, #434f5bff, #20292bff, #3e4637ff, #3
 // Variables to override
 $primary:   $silver-pink;
 $secondary: $desert-sand;
-$success:   $roman-silver;
+$success:   $lighter-pink;
 $danger:    $silver-pink;
 $warning:   $background-color;
-$info:      $olive-drab-7;
+$info:      $dark-sky-blue;
 $dark:      $bd-blue;
+$light:     $lightTable;
 
 
 $custom-colors:(
@@ -78,6 +82,7 @@ $custom-colors:(
     'pine-tree'      :$pine-tree,
     'true-blue'      :$true-blue,
     'bg-blue'        :$bd-blue,
+    'charcoal'       :$charcoal,
 );
     
 $theme-colors:(
@@ -102,6 +107,18 @@ $theme-colors:(
         'warning'       :$warning,
         'info'          :$info,
         'dark'          :$dark,
+        'light'         :$light,
 );
-        
+
+
 $custom-colors:map-merge($theme-colors, $custom-colors);
+
+// fonts
+
+@import url('https://fonts.googleapis.com/css2?family=Qwitcher+Grypen&display=swap');
+
+.custom-font {
+    font-family: 'Qwitcher Grypen', cursive;
+  }
+
+  // media queries
