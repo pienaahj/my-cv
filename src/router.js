@@ -7,6 +7,7 @@ import DefaultPage from './pages/DefaultPage.vue';
 import CoursePage from './pages/CoursePage.vue';
 import EmploymentPage from './pages/EmploymentPage.vue';
 import PersonalPage from './pages/PersonalPage.vue';
+import SiteInfo from './pages/SiteInfo.vue';
 
 
 
@@ -27,6 +28,7 @@ const router = createRouter({
             props: true,
         },
         { path: '/aboutMe', component: AboutMe},
+        { path: '/siteInfo', component: SiteInfo},
         { path: '/personalPage', component: PersonalPage},
         { path: '/defaultPage', component: DefaultPage},
         { path: '/:notFound(.*)', component: NotFound},

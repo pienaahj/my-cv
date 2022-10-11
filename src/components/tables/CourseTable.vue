@@ -11,7 +11,6 @@
         >
     </table-item>
  </ul>
-
 </template>>
 
 <script>
@@ -26,8 +25,6 @@
                 isLoading: false,
             }
         },
-        
-
         // Fetch the courses from Firebase
         methods: {
             async loadAllCourses() {
@@ -40,12 +37,10 @@
                 this.isLoading = false; 
             },
         },
-
         // Load the courses at creation 
         created() {
             this.loadAllCourses();
         },
-
         // get the courses from state store
         computed: {
             loadCourses() {
@@ -55,13 +50,11 @@
                 return !this.isLoading && this.$store.getters['courses/hasCourses'];
             },   
         },
-        
     } 
 </script>
 
 <style lang="scss" scoped>
   @import '@/assets/config/_variables.scss';
-
     .card-content{
         background-color: $silver-pink;
         border-radius: 12px;
@@ -70,5 +63,4 @@
         margin: 0.5rem auto;
         max-width: 32rem;
     }
-
 </style>

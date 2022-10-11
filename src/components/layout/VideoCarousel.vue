@@ -9,14 +9,11 @@
     :controls="false"
     itemsClass="d-block w-100"
     tag:="div"
+    captionsClass="carousel-caption d-none d-md-block carousel-caption-video"
   />
-  
-
 </template>
 
 <script>
-
-
   import { ref } from "vue";
   import { MDBCarousel } from "mdb-vue-ui-kit";
   export default {
@@ -28,23 +25,23 @@
         {
           video: require('../../assets/images/mixkit-small-boat-in-a-great-heavenly-place-4997.mp4'),
           alt: "...",
-          label: "First slide label",
-          caption: "Some wisdom I have to figure out still.",
+          label: '“You can teach a student a lesson for a day; but if you can teach him to learn by creating curiosity, he will continue the learning process as long as he lives."',
+          caption: "-Clay P. Bedford",
 
         },
         {
           video: require('../../assets/images/Beach - 3998.mp4'),
           alt: "...",
-          label: "Second slide label",
-          caption: "More wise stuff.",
+          label: '"Intelligence plus character-that is the goal of true education."',
+          caption: "-Martin Luther King Jr.",
  
         },
         {
           video: require('../../assets/images/Nature boat see- 111309.mp4'),
           alt: "...",
-          label: "Third slide label",
+          label: '"Tell me and I’ll forget; show me and I may remember; involve me and I’ll understand."',
           caption:
-            "Another wisdom - todo."
+            "-Chinese Proverb"
         }
       ];
       const carousel6 = ref(0);
@@ -57,66 +54,79 @@
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  @import '@/assets/config/_variables.scss';
     /* Carousel styling */
-    .carousel {
+  .carousel {
     height: auto; /*50vh*/
     width: 100vh; /* width: 100%; */
     object-fit: cover;
     object-position: center;
     overflow: hidden;
     margin:auto;
+  }
+  #introCarousel,
+  .carousel-inner,
+  .carousel-item,
+  .carousel-item.active {
+    height: 50vh; /*100vh */
+    display: flex;
+    justify-content: center;
+  } 
 
-}
+  .carousel-item:nth-child(1) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
 
-    #introCarousel,
-    .carousel-inner,
-    .carousel-item,
-    .carousel-item.active {
-      height: 50vh; /*100vh */
-      display: flex;
-      justify-content: center;
-    } 
+  .carousel-item:nth-child(2) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
 
-    .carousel-item:nth-child(1) {
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center center;
-    }
+  .carousel-item:nth-child(3) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
 
-    .carousel-item:nth-child(2) {
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center center;
+  .carousel-item-size video{
+    height: 55h; 
+    object-fit: cover;
+    object-position: centre;
+    overflow: hidden;
+  }
+  /* Height for devices larger than 576px */
+  @media (min-width: 992px) {
+    #introCarousel {
+      margin-top: -58.59px;
     }
+  }
+  @media only screen and (min-width: 375px) and (max-width: 1024px) {
+  .carousel-media {
+    display: flex;
+    flex-direction:column;
+    width: 1000% !important;
+    column-fill: auto;
+  }
+  .carousel {
+    height: auto; 
+    width: 100%; 
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+    margin:auto; 
+  }
 
-    .carousel-item:nth-child(3) {
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center center;
-    }
+  }
+</style>
 
-    .carousel-item-size video{
-      height: 55h; /*100vh */
-      object-fit: cover;
-      object-position: centre;
-      overflow: hidden;
-    }
-    /* Height for devices larger than 576px */
-    @media (min-width: 992px) {
-      #introCarousel {
-        margin-top: -58.59px;
-      }
-    }
-    @media only screen and (min-width: 375px) and (max-width: 1024px) {
-    .carousel-media {
-      display: flex;
-      flex-direction:column;
-      width: 60% !important;
-      max-width: 60%;
-      /* flex-wrap: wrap; */
-      column-fill: auto;
-    }
-    
+<style lang="scss">
+  // MDB carousel component styles needs to be global
+  @import '@/assets/config/_variables.scss';
+  .carousel-caption-video {
+    color: $olive-drab-7 !important;
   }
 </style>

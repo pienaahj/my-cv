@@ -8,10 +8,10 @@
       v-for="competency in loadCoreCompencies"
       :key="competency.id"
       :itemEntry="competency.coreComp"
+      class="media-font-size"
     >
     </table-item>
   </ul>
-
 </template>
 
 <script>
@@ -27,7 +27,6 @@ export default {
       isLoading: false,
     };
   },
-
   // Fetch the skills from Firebase
   methods: {
     async loadAllCompetencies() {
@@ -43,12 +42,10 @@ export default {
       await this.$store.dispatch('competencies/loaded');
     },
   },
-
   // Load the skill at creation
   created() {
     this.loadAllCompetencies();
   },
-
   // get the skills from state store
   computed: {
     loadCoreCompencies() {
@@ -65,7 +62,6 @@ export default {
 
 <style lang="scss" scoped>
   @import '@/assets/config/_variables.scss';
-
     .card-content{
         background-color: $silver-pink;
         border-radius: 12px;
@@ -74,5 +70,4 @@ export default {
         margin: 0.5rem auto;
         max-width: 23rem;
     }
-
 </style>

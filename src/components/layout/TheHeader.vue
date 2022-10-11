@@ -1,7 +1,7 @@
 <template>
   <header>
     <MDBNavbar
-      class="mb-1 opacity-85 nav-layout layout-media"
+      class="mb-1 opacity-85 nav-layout nav-media"
       expand="lg" 
       position="sticky"
       light
@@ -55,11 +55,12 @@
             >
             <MDBDropdownMenu aria-labelledby="dropdownMenuButton">
               <MDBDropdownItem to="/personalPage">Some personal guidance</MDBDropdownItem>
-              <MDBDropdownItem to="#">Another Action</MDBDropdownItem>
+              
               <MDBDropdownItem href='/files/HJ_Pienaar_cv_2022-10 .pdf'
               download
-              >Download curriculum vitae</MDBDropdownItem
-              >
+              >Download curriculum vitae</MDBDropdownItem>
+              <MDBDropdownItem to="/aboutMe">Contact Information</MDBDropdownItem>
+              <MDBDropdownItem to="/siteInfo">Site Information</MDBDropdownItem>
             </MDBDropdownMenu>
           </MDBDropdown>
         </MDBNavbarItem>
@@ -86,7 +87,7 @@
     MDBDropdown,
     MDBDropdownToggle,
     MDBDropdownMenu,
-    MDBDropdownItem
+    MDBDropdownItem,
   } from 'mdb-vue-ui-kit';
   
   import { ref } from 'vue';
@@ -103,7 +104,7 @@
       MDBDropdown,
       MDBDropdownToggle,
       MDBDropdownMenu,
-      MDBDropdownItem
+      MDBDropdownItem, 
     },
     setup() {
       const collapse1 = ref(false);
@@ -139,7 +140,14 @@
   .quote {
     color: $desert-sand !important;
   }
-  
+  .nav-media {
+        display: flex;
+        flex-direction:column;
+        width: 100% !important;
+        /* flex-wrap: wrap; */
+        column-fill: auto;
+    }
+
 </style>
 
 <style lang="scss">

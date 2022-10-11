@@ -8,10 +8,10 @@
         v-for="responsibilitiesItem in loadResponsibilities"
         :key="responsibilitiesItem.id"
         :itemEntry="responsibilitiesItem.responsibility"
+        class="media-font-size"
         >
     </table-item>
  </ul>
-
 </template>>
 
 <script>
@@ -26,8 +26,6 @@
                 isLoading: false,
             }
         },
-        
-
         // Fetch the responsibilities from Firebase
         methods: {
             async loadAllResponsibilities() {
@@ -40,12 +38,10 @@
                 this.isLoading = false; 
             },
         },
-
-        // Load the skill at creation 
+        // Load the responsibilities at creation 
         created() {
             this.loadAllResponsibilities();
         },
-
         // get the responsibilities from state store
         computed: {
             loadResponsibilities() {
@@ -54,14 +50,12 @@
             hasResponsibilities() {
                 return !this.isLoading && this.$store.getters['responsibilities/hasResponsibilities'];
             },   
-        },
-        
+        },       
     } 
 </script>
 
 <style lang="scss" scoped>
   @import '@/assets/config/_variables.scss';
-
     .card-content{
         background-color: $silver-pink;
         border-radius: 12px;
@@ -70,5 +64,4 @@
         margin: 0.5rem auto;
         max-width: 32rem;
     }
-
 </style>

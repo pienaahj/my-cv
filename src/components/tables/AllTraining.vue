@@ -8,6 +8,8 @@
         variant="light"
         striped 
         sm 
+        class="media-font-size"
+        borderless
        >
         <thead class="table-header sticky-top">
             <tr>
@@ -15,39 +17,39 @@
               
               <th scope="col" id="test" v-if="!online"> 
                 <label for="courseCategory">Category</label>
-                <select v-on:change="filterCourseCategories" name="courseCategory" id="courseCategory" class="d-flex" >
+                <select v-on:change="filterCourseCategories" name="courseCategory" id="courseCategory" class="d-flex flex-wrap" >
                   <option value="all">All</option>
-                  <option value="ManagementLeadership">Management/Leadership</option>
+                  <option value="Management/Leadership">Management/Leadership</option>
                   <option value="Computer literacy">Computer Literacy</option>
                   <option value="Project Management">Project Management</option>
-                  <option value="Management and people skills">Management and People Skills</option>
+                  <option value="Management & people skills">Management & People Skills</option>
                   <option value="Financial Management">Financial Management</option>
                   <option value="Saftey Management">Saftey Management</option>
                   <option value="Technical Training">Technical Training</option>
                   <option value="GIS">GIS</option>
-                  <option value="ProgrammingDeveloper">Programming Developer</option>
+                  <option value="Programming/Developer">Programming Developer</option>
                 </select>
               </th>
 
               <th scope="col" id="test2" v-else> 
                 <label for="onlineCourseCategory">Category</label>
-                <select v-on:change="filterCourseCategories" name="onlineCourseCategory" id="courseCategory" class="d-flex" >
+                <select v-on:change="filterCourseCategories" name="onlineCourseCategory" id="courseCategory" class="d-flex flex-wrap" >
                   <option value="all">All</option>
-                  <option value="GolangDevelopment">Golang Development</option>
-                  <option value="PythonDevelopment">Python Development</option>
-                  <option value="SQLDevelopment">SQL Development</option>
-                  <option value="ElasticSearchDevelopment">ElasticSearch Development</option>
-                  <option value="SecurityDevelopment">Security Development</option>
+                  <option value="Golang/Development">Golang Development</option>
+                  <option value="Python/Development">Python Development</option>
+                  <option value="SQL/Development">SQL Development</option>
+                  <option value="ElasticSearch/Development">ElasticSearch Development</option>
+                  <option value="Security/Development">Security Development</option>
                   <option value="LinuxAdministrator">Linux Administrator</option>
-                  <option value="ProjectManagementg">Project Management</option>
+                  <option value="ProjectManagement">Project Management</option>
                   <option value="FrontEndFramework">FrontEnd Framework</option>
                   <option value="WebDevelopment">Web Development</option>
-                  <option value="AIDevelopment">AI Development</option>
+                  <option value="AI/Development">AI Development</option>
                 </select>
               </th>
 
 
-              <th scope="col">Institution/Period</th>
+              <th id="institution" v-if="!online" scope="col">Institution/Period</th>
 
               <th scope="col" id="test3" v-if="online">
                 <label for="onlineCourseCompleted">Completed</label>
@@ -58,11 +60,9 @@
                 </select>
               </th>
 
-              <th scope="col">Description</th>
+              <th class="show-on-desktop" scope="col">Description </th>
             </tr>
 
-            
-            
         </thead>
         <tbody class="vertical-align:top ">
           <tr v-for="course in courses"
@@ -81,20 +81,19 @@
             <td>
               <p>{{ course.courseCategory }}</p>
             </td>
-            <td>
+            <td v-if="!online">
               <p>{{ course.institution}}</p>
               <p>{{ course.datePeriod }}</p>
             </td>
             <td v-if="online">
               <p>{{ course.completed }}</p>
             </td>
-            <td colspan="2">
-              <div>
+            <td colspan="2" class="show-on-desktop">
+              <div >
                   {{ course.description}}
               </div>
             </td>
           </tr>
-          
           
         </tbody>
           
@@ -104,22 +103,16 @@
   
   <script>
     import { MDBTable } from 'mdb-vue-ui-kit';
-
-
-
-  
   export default {
     components: {
       MDBTable,
     },
-
     props: {
       online: {
         type: Boolean,
         default: false,
       }
     },
-
     data() {
       return {
         error: null,
@@ -134,7 +127,6 @@
         categorySelected: 'all',
       };
     },
-  
     // Fetch the skills from Firebase
     methods: {
       async loadAllCourses() {
@@ -180,7 +172,6 @@
         console.log("courses: ", this.courses);
         this.categoryCourses = this.courses;
         this.filterCoursesCompleted('');
-
       },
       
       filterCoursesCompleted(evt) {
@@ -211,16 +202,12 @@
         this.completedSelector = val;  // store the current selector 
         this.completedCourses = this.courses;  // remember the completed courses set
       },
-      
-      
     },
     
     
     created() {
       this.loadAllCourses();
     },
-    
-    
     // get the courses from state store
     computed: {
       // filtered courses to display 
@@ -234,7 +221,6 @@
         return courses;
         }
       },
-      
       hasCourses() {
         return (
           !this.isLoading && this.$store.getters['courses/hasCourses']
@@ -246,7 +232,6 @@
   
   <style lang="scss" scoped>
     @import '@/assets/config/_variables.scss';
-  
       .table-content tr {
           background-color:  whitesmoke;
           border-radius: 12px;
@@ -255,7 +240,6 @@
           margin: 0.5rem auto;
           max-width: 100rem;
       }
-
       .table-header {
           background-color:  $bd-blue;
           align-items:stretch;
@@ -266,13 +250,11 @@
           align-items:stretch;
           vertical-align: top;
       }
-
       .table thead th {
         background-color:  $bd-blue;
         align-items:stretch;
         vertical-align: top;
       }
-
       .table-data {
         border-radius: 12px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
@@ -280,5 +262,4 @@
         margin: 0.5rem auto;
         max-width: 100rem;
       }
-  
   </style>

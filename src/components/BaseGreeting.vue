@@ -30,13 +30,13 @@
               collapseId="collapseOne"
               class="text-wrap text-start" 
             >
-                  <p>Graduated electronic engineer specialized in telecommunications planning of access network technologies and Geographical Information Systems.</p>
-                  <p>Twenty five years of technical management experience and coordination of large planning and GIS projects, aided by more than a fair share of innovative ability, a can-do attitude and seasoned by respect for others, produces the package that is largely – me.</p>
-                  <p>Personal motivation is derived from the belief that there are few problems without solutions and a deep routed personal passion for solving these.</p>   
-                  <p></p>
-                  <p>I like a challenge.</p>  
-                  <p>I like to enable others to achieve.</p>
-                  <p>I am ever curious.</p>
+              <p>Graduated electronic engineer specialized in telecommunications planning of access network technologies and Geographical Information Systems.</p>
+              <p>Twenty five years of technical management experience and coordination of large planning and GIS projects, aided by more than a fair share of innovative ability, a can-do attitude and seasoned by respect for others, produces the package that is largely – me.</p>
+              <p>Personal motivation is derived from the belief that there are few problems without solutions and a deep routed personal passion for solving these.</p>   
+              <p></p>
+              <p>I like a challenge.</p>  
+              <p>I like to enable others to achieve.</p>
+              <p>I am ever curious.</p>
             </MDBCardText>
             <MDBCardTitle>
               <img 

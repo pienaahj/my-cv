@@ -1,9 +1,8 @@
 <template>
-
    <MDBCard shadow="5" class="rounded-8 mx-1 my-4" >
     <MDBCardBody  bg="warning"  class="card-content text-start fs-5 " >
       <MDBCardTitle>Career summary</MDBCardTitle>
-      <MDBCardText>
+      <MDBCardText class="media-font-size">
         <p>My career focused on the design and management of telecommunications networks in various disciplines.  Experience varies from maintenance of electronic switches to design of rural communication networks in optic fiber and radio backbones, to radio and copper distribution networks. </p>  
         <p>Extensive hands-on experience and management of GIS systems, focused on the design of telecommunications networks across hardware and software.  Design of data sets and methods for storage of network records.</p> 
         <p>Wide-ranging experience of right-of-way practices, procurement and environmental impact studies for telecommunication networks and installations.</p> 
@@ -30,16 +29,21 @@ import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText} from "mdb-vue-ui-kit";
   };
 </script>
 
-
-
 <style lang="scss" scoped>
   @import '@/assets/config/_variables.scss';
-
     .card-content{
-        background-color: white-smoke;
         border-radius: 12px;
         margin: 0.5rem auto;
         max-width: 40rem;
     }
-
+    @media only screen and (min-width: 375px) and (max-width: 1024px) {
+        .media-font-size {
+          font-size: x-small !important;
+        }
+        .card-content{
+        border-radius: 12px;
+        margin: 0.5rem auto;
+        max-width: 45rem;
+        }
+    }
 </style>
