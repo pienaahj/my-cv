@@ -1,28 +1,16 @@
 <<<<<<< HEAD
 # my-cv
-=======
-# my-cv
 
-## Project setup
-```
-npm install
-```
+![](dist/img/HJP-Logo.349eff98.png)
+<p>This site was created as in VueJS (pure and with some help from MDBVue) partly an exercise in single page apps,
+to serve as a personal demonstrative example of an available project on the internet and as a more reactive way to visualise and extend my resume.</p> 
+<p>The app ulitizes vuex, vue-router and uses Firebase Realtime Database as a store, from where the data is loaded at runtime.</p> 
+<p>The site is hosted on Firebase.</p>
+<p>The data was populated on Firebase by a Golang app.</p>
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Lints and fixes files
-```
-npm run lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
->>>>>>> 47a9e46 (init)
+
+
+
