@@ -8,8 +8,11 @@ to serve as a personal demonstrative example of an available project on the inte
 <p>The site is hosted on Firebase.</p>
 <p>The data was populated on Firebase by a Golang app.</p>
 
-
-
+<p> Thanks to:
+<a href='https://www.freepik.com/vectors/skill-development'>Skill development vector created by rawpixel.com - www.freepik.com</a> and 
+<a href='https://www.freepik.com/vectors/coloured-background'>Coloured background vector created by GraphiqaStock - www.freepik.com</a>
+for the use of their free icons.
+</p>
 
 
 
